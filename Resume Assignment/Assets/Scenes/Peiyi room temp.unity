@@ -4268,6 +4268,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corridor_L with Walls (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5385858135944886454, guid: e8df95f567b944446997de5b813f03b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8df95f567b944446997de5b813f03b7, type: 3}
 --- !u!1001 &701632831
@@ -14546,6 +14551,90 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0759e5b8616fa854dbb807a3ac19ec2b, type: 3}
+--- !u!1001 &1817065152
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2701488540697771197, guid: 52c7799ee9bfb724481f00b88d9a6d82,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701488540697771197, guid: 52c7799ee9bfb724481f00b88d9a6d82,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.961141
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701488540697771197, guid: 52c7799ee9bfb724481f00b88d9a6d82,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -45.16072
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701488540697771197, guid: 52c7799ee9bfb724481f00b88d9a6d82,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701488540697771197, guid: 52c7799ee9bfb724481f00b88d9a6d82,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701488540697771197, guid: 52c7799ee9bfb724481f00b88d9a6d82,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701488540697771197, guid: 52c7799ee9bfb724481f00b88d9a6d82,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701488540697771197, guid: 52c7799ee9bfb724481f00b88d9a6d82,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701488540697771197, guid: 52c7799ee9bfb724481f00b88d9a6d82,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701488540697771197, guid: 52c7799ee9bfb724481f00b88d9a6d82,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701488540697771197, guid: 52c7799ee9bfb724481f00b88d9a6d82,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701488540697771198, guid: 52c7799ee9bfb724481f00b88d9a6d82,
+        type: 3}
+      propertyPath: m_Name
+      value: Hobby Activities Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540809569546558688, guid: 52c7799ee9bfb724481f00b88d9a6d82,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540809569546558688, guid: 52c7799ee9bfb724481f00b88d9a6d82,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540809569546558688, guid: 52c7799ee9bfb724481f00b88d9a6d82,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 52c7799ee9bfb724481f00b88d9a6d82, type: 3}
 --- !u!1 &1819059972 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2193907223268487859, guid: 82f59f405fe71794b9b99847938ab5d8,
@@ -16530,6 +16619,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PeiyiPart
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364768713936253809, guid: 2f218a88ecb725b4398c901db78cc5da,
+        type: 3}
+      propertyPath: ColorBySpeedModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f218a88ecb725b4398c901db78cc5da, type: 3}
