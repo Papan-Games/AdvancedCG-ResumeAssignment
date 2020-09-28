@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2105782832}
-  m_IndirectSpecularColor: {r: 0.23236844, g: 0.23554417, b: 0.27230176, a: 1}
+  m_IndirectSpecularColor: {r: 0.043387376, g: 0.044548247, b: 0.05929023, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16237,6 +16237,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2193907222759861701, guid: 82f59f405fe71794b9b99847938ab5d8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2193907223268487859, guid: 82f59f405fe71794b9b99847938ab5d8,
         type: 3}
       propertyPath: m_Name
@@ -16300,6 +16305,21 @@ PrefabInstance:
     - target: {fileID: 2193907223268487865, guid: 82f59f405fe71794b9b99847938ab5d8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374565469182992066, guid: 82f59f405fe71794b9b99847938ab5d8,
+        type: 3}
+      propertyPath: fastApproximateAntialiasing.fastMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374565469182992066, guid: 82f59f405fe71794b9b99847938ab5d8,
+        type: 3}
+      propertyPath: antialiasingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374565469182992066, guid: 82f59f405fe71794b9b99847938ab5d8,
+        type: 3}
+      propertyPath: fastApproximateAntialiasing.keepAlpha
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
