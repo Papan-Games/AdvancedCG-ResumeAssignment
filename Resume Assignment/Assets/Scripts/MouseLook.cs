@@ -25,6 +25,9 @@ public class MouseLook : MonoBehaviour
 
     public RotationAxes axes = RotationAxes.MouseXandY;     // Defaulted to Both Axes
 
+    [HideInInspector]
+    public Vector2 LookAxis;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,11 +82,11 @@ public class MouseLook : MonoBehaviour
     {
         if (axes == RotationAxes.MouseX)
         {
-            this.gameObject.transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivity * horizontalRotate, 0);
+            this.gameObject.transform.Rotate(0, LookAxis.x * sensitivity * horizontalRotate, 0);
         }
         else if (axes == RotationAxes.MouseY)
         {
-            Xaxis -= Input.GetAxis("Mouse Y") * sensitivity * verticalRotate;
+            Xaxis -= LookAxis.y * sensitivity * verticalRotate;
             Xaxis = Mathf.Clamp(Xaxis, minVert, maxVert);
 
             float Yaxis = charCam.transform.localEulerAngles.y;
@@ -91,10 +94,10 @@ public class MouseLook : MonoBehaviour
         }
         else
         {
-            Xaxis -= Input.GetAxis("Mouse Y") * sensitivity * verticalRotate;
+            Xaxis -= LookAxis.y * sensitivity * verticalRotate;
             Xaxis = Mathf.Clamp(Xaxis, minVert, maxVert);
 
-            float delta = Input.GetAxis("Mouse X") * sensitivity * horizontalRotate;
+            float delta = LookAxis.x * sensitivity * horizontalRotate;
             float Yaxis = transform.localEulerAngles.y + delta;
             transform.localEulerAngles = new Vector3(0, Yaxis, 0);
             charCam.transform.localEulerAngles = new Vector3(Xaxis, 0, 0);

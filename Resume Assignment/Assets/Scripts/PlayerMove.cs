@@ -35,10 +35,10 @@ public class PlayerMove : MonoBehaviour
             Vector3 right = transform.TransformDirection(Vector3.right);
 
             //Remember to comment it and uncomment joystick one before build
-            float deltaX = Input.GetAxis("Vertical") * speed;
-            float deltaY = Input.GetAxis("Horizontal") * speed;
-            //float deltaX = joystick.Vertical * speed;
-            //float deltaY = joystick.Horizontal * speed;
+            //float deltaX = Input.GetAxis("Vertical") * speed;
+            //float deltaY = Input.GetAxis("Horizontal") * speed;
+            float deltaX = joystick.Vertical * speed;
+            float deltaY = joystick.Horizontal * speed;
 
             float movementY = moveDirection.y;
             moveDirection = (forward * deltaX) + (right * deltaY);
