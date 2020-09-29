@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     public float gravity = 9.8f;
     private bool canMove;
 
+    private bool mobileJump;
     private CharacterController charController;
     Vector3 moveDirection = Vector3.zero;
 
@@ -20,6 +21,7 @@ public class PlayerMove : MonoBehaviour
     {
         charController = GetComponent<CharacterController>();
         canMove = true;
+        mobileJump = false;
     }
 
     void Update()
@@ -35,9 +37,10 @@ public class PlayerMove : MonoBehaviour
             float movementY = moveDirection.y;
             moveDirection = (forward * deltaX) + (right * deltaY);
 
-            if (charController.isGrounded && Input.GetButton("Jump"))
+            if (charController.isGrounded && (Input.GetButton("Jump") || mobileJump))
             {
                 moveDirection.y = jumpSpeed;
+                mobileJump = false;
             }
             else
             {
@@ -50,5 +53,10 @@ public class PlayerMove : MonoBehaviour
 
             charController.Move(moveDirection * Time.deltaTime);
         }
+    }
+
+    public void JumpButton()
+    {
+        mobileJump = true;
     }
 }
