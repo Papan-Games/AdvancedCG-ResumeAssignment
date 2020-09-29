@@ -28,8 +28,8 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
         canAim = true;
     }
 
@@ -61,15 +61,15 @@ public class MouseLook : MonoBehaviour
     {
         if (canAim == true)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
             canAim = false;
             Time.timeScale = 0;
         }
         else
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+           // Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
             canAim = true;
             Time.timeScale = 1;
         }

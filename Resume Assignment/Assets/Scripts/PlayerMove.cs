@@ -16,12 +16,14 @@ public class PlayerMove : MonoBehaviour
     private CharacterController charController;
     Vector3 moveDirection = Vector3.zero;
 
+    Joystick joystick;
    
     void Start()
     {
         charController = GetComponent<CharacterController>();
         canMove = true;
         mobileJump = false;
+        joystick = FindObjectOfType<Joystick>();
     }
 
     void Update()
@@ -32,8 +34,12 @@ public class PlayerMove : MonoBehaviour
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 right = transform.TransformDirection(Vector3.right);
 
+            //Remember to comment it and uncomment joystick one before build
             float deltaX = Input.GetAxis("Vertical") * speed;
             float deltaY = Input.GetAxis("Horizontal") * speed;
+            //float deltaX = joystick.Vertical * speed;
+            //float deltaY = joystick.Horizontal * speed;
+
             float movementY = moveDirection.y;
             moveDirection = (forward * deltaX) + (right * deltaY);
 
