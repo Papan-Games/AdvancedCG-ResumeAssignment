@@ -65,11 +65,11 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlitchIntensity: 0
-    - _GlitchSpeed: 50
+    - _GlitchSpeed: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _GlowIntensity: 0.01
+    - _GlowIntensity: 0.25
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1

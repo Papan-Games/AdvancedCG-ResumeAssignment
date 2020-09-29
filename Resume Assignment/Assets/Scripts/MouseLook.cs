@@ -36,9 +36,19 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Show Menu
         if(Input.GetKeyDown(KeyCode.P))
         {
             ShowCursor();
+        }
+
+        if(Time.timeScale == 0 && canAim)
+        {
+            canAim = false;
+        }
+        else if (Time.timeScale >= 1 && !canAim)
+        {
+            canAim = true;
         }
 
         if (canAim == true)
