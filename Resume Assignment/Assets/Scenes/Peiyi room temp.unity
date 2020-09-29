@@ -396,6 +396,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8586705489982069881, guid: a73a4c05525915b4ab1d7a30c68060e0,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8665656
+      objectReference: {fileID: 0}
     - target: {fileID: 8586705490951422138, guid: a73a4c05525915b4ab1d7a30c68060e0,
         type: 3}
       propertyPath: m_Name
@@ -15265,7 +15270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canAim: 0
   charCam: {fileID: 134314978}
-  sensitivity: 0.3
+  sensitivity: 0.1
   axes: 0
   LookAxis: {x: 0, y: 0}
 --- !u!114 &1819059974
