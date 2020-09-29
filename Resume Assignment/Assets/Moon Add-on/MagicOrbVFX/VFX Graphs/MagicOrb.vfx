@@ -88,9 +88,9 @@ MonoBehaviour:
     position:
       serializedVersion: 2
       x: 2644
-      y: -576
+      y: -577
       width: 945
-      height: 1450
+      height: 1579
     contents:
     - model: {fileID: 8926484042661614770}
       id: 0
@@ -177,10 +177,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: 0
-    y: -664
-    width: 5514
-    height: 3116
+    x: 168
+    y: -722
+    width: 5371
+    height: 2453
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,7 +260,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.7373754978179932,"g":0.18396228551864625,"b":1.0,"a":0.0}'
+      m_SerializableObject: '{"r":1.474509835243225,"g":0.3686274588108063,"b":2.0,"a":0.0}'
     min: -Infinity
     max: Infinity
     descendantCount: 0
@@ -1194,9 +1194,15 @@ VisualEffectResource:
       SampleMode:OverLife Mode:PerComponent ColorMode:ColorAndAlpha channels:XYZ
       */\n\t\t\t{\n\t\t\t    float t = age / lifetime;\n\t\t\t    float4 value =
       0.0f;\n\t\t\t    value = SampleGradient(Color, t);\n\t\t\t    color += value.rgb;\n\t\t\t   
-      alpha = value.a;\n\t\t\t}\n\t\t\t\n\n\t\t\t\n\t\t\t#if defined(HAS_STRIPS)
-      && !defined(VFX_PRIMITIVE_QUAD)\n\t\t\t#error VFX_PRIMITIVE_QUAD must be defined
-      when HAS_STRIPS is.\n\t\t\t#endif\n\t\t\t\n\t\t\tstruct vs_input\n\t\t\t{\n\t\t\t\tVFX_DECLARE_INSTANCE_ID\n\t\t\t};\n\t\t\t\n\t\t\t#if
+      alpha = value.a;\n\t\t\t}\n\t\t\tvoid Orient_4(inout float3 axisX, inout float3
+      axisY, inout float3 axisZ) /*mode:FaceCameraPlane axes:ZY */\n\t\t\t{\n\t\t\t   
+      \n\t\t\t    float3x3 viewRot = GetVFXToViewRotMatrix();\n\t\t\t    axisX =
+      viewRot[0].xyz;\n\t\t\t    axisY = viewRot[1].xyz;\n\t\t\t    #if VFX_LOCAL_SPACE
+      // Need to remove potential scale in local transform\n\t\t\t    axisX = normalize(axisX);\n\t\t\t   
+      axisY = normalize(axisY);\n\t\t\t    axisZ = cross(axisX,axisY);\n\t\t\t   
+      #else\n\t\t\t    axisZ = -viewRot[2].xyz;\n\t\t\t    #endif\n\t\t\t    \n\t\t\t}\n\t\t\t\n\n\t\t\t\n\t\t\t#if
+      defined(HAS_STRIPS) && !defined(VFX_PRIMITIVE_QUAD)\n\t\t\t#error VFX_PRIMITIVE_QUAD
+      must be defined when HAS_STRIPS is.\n\t\t\t#endif\n\t\t\t\n\t\t\tstruct vs_input\n\t\t\t{\n\t\t\t\tVFX_DECLARE_INSTANCE_ID\n\t\t\t};\n\t\t\t\n\t\t\t#if
       HAS_STRIPS\n\t\t\t#define PARTICLE_IN_EDGE (id & 1)\n\t\t\t\n\t\t\tfloat3 GetParticlePosition(uint
       index)\n\t\t\t{\n\t\t\t\tstruct Attributes attributes = (Attributes)0;\n\t\t\t\tattributes.position
       = float3(0, 0, 0);\n\t\t\t\t\n\n\t\t\t\treturn attributes.position;\n\t\t\t}\n\t\t\t\n\t\t\tfloat3
@@ -1256,10 +1262,11 @@ VisualEffectResource:
       /*inout */attributes.size, Size_a);\n\t\t\t\tSetAttribute_FDD06EC7( /*inout
       */attributes.color, Color_b);\n\t\t\t\tAttributeFromCurve_2C8A43C4( /*inout
       */attributes.color,  /*inout */attributes.alpha, attributes.age, attributes.lifetime,
-      Color_c);\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if !HAS_STRIPS\n\t\t\t\tif (!attributes.alive)\n\t\t\t\t\treturn
-      o;\n\t\t\t#endif\n\t\t\t\t\n\t\t\t#if VFX_PRIMITIVE_QUAD\n\t\t\t\n\t\t\t#if
-      HAS_STRIPS\n\t\t\t#if VFX_STRIPS_UV_STRECHED\n\t\t\t\to.VFX_VARYING_UV.x =
-      (float)(currentIndex) / (stripData.nextIndex - 1);\n\t\t\t#elif VFX_STRIPS_UV_PER_SEGMENT\n\t\t\t\to.VFX_VARYING_UV.x
+      Color_c);\n\t\t\t\tOrient_4( /*inout */attributes.axisX,  /*inout */attributes.axisY, 
+      /*inout */attributes.axisZ);\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if !HAS_STRIPS\n\t\t\t\tif
+      (!attributes.alive)\n\t\t\t\t\treturn o;\n\t\t\t#endif\n\t\t\t\t\n\t\t\t#if
+      VFX_PRIMITIVE_QUAD\n\t\t\t\n\t\t\t#if HAS_STRIPS\n\t\t\t#if VFX_STRIPS_UV_STRECHED\n\t\t\t\to.VFX_VARYING_UV.x
+      = (float)(currentIndex) / (stripData.nextIndex - 1);\n\t\t\t#elif VFX_STRIPS_UV_PER_SEGMENT\n\t\t\t\to.VFX_VARYING_UV.x
       = PARTICLE_IN_EDGE;\n\t\t\t#else\n\t\t\t\t\n\t\t\t    o.VFX_VARYING_UV.x =
       texCoord;\n\t\t\t#endif\n\t\t\t\n\t\t\t\to.VFX_VARYING_UV.y = float((id & 2)
       >> 1);\n\t\t\t\tconst float2 vOffsets = float2(0.0f,o.VFX_VARYING_UV.y - 0.5f);\n\t\t\t\t\n\t\t\t#if
@@ -2397,9 +2404,9 @@ VisualEffectResource:
         - m_ExpressionIndex: 15
           m_Value: {x: 0, y: 1.9853414, z: 18.050493, w: 1}
         - m_ExpressionIndex: 18
-          m_Value: {x: 20, y: 20, z: 20, w: 20}
+          m_Value: {x: 30, y: 30, z: 30, w: 30}
         - m_ExpressionIndex: 20
-          m_Value: {x: 0.7373755, y: 0.18396229, z: 1, w: 0}
+          m_Value: {x: 1.4745098, y: 0.36862746, z: 2, w: 0}
       m_Uint:
         m_Array:
         - m_ExpressionIndex: 8
@@ -8695,7 +8702,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614792}
-  m_UIPosition: {x: 3140, y: -222}
+  m_UIPosition: {x: 3140, y: -220}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -9077,7 +9084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 3140, y: 85}
+  m_UIPosition: {x: 3140, y: 214}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -9113,7 +9120,8 @@ MonoBehaviour:
   - {fileID: 8926484042661614794}
   - {fileID: 8926484042661614800}
   - {fileID: 8926484042661614819}
-  m_UIPosition: {x: 3139, y: 321}
+  - {fileID: 8926484042661615070}
+  m_UIPosition: {x: 3139, y: 450}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -9802,7 +9810,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 20
+      m_SerializableObject: 30
     m_Space: 2147483647
   m_Property:
     name: b
@@ -15283,7 +15291,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.7373754978179932,"g":0.18396228551864625,"b":1.0,"a":0.0}'
+      m_SerializableObject: '{"r":1.474509835243225,"g":0.3686274588108063,"b":2.0,"a":0.0}'
     m_Space: 2147483647
   m_Property:
     name: o
@@ -15426,3 +15434,25 @@ MonoBehaviour:
     attributes: []
   m_Direction: 1
   m_LinkedSlots: []
+--- !u!114 &8926484042661615070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d16c6aeaef944094b9a1633041804207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: 8926484042661614784}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 0
+  m_UISuperCollapsed: 0
+  m_InputSlots: []
+  m_OutputSlots: []
+  m_Disabled: 0
+  mode: 0
+  axes: 4
