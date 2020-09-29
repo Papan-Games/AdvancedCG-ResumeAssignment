@@ -13549,6 +13549,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Personal Room
       objectReference: {fileID: 0}
+    - target: {fileID: 5438713462317437573, guid: 39d699f687ae69043baa07088de6c922,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39d699f687ae69043baa07088de6c922, type: 3}
 --- !u!4 &1500694733 stripped
