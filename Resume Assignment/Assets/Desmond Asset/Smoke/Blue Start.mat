@@ -27,7 +27,7 @@ Material:
     - _EmissionRange: 10
     - _InvFade: 0.5
     m_Colors:
-    - _Color: {r: -0.009999925, g: 0.39999998, b: -0.009999329, a: 1}
-    - _EmissionColor: {r: -0.009999925, g: 0.39999998, b: -0.009999329, a: 1}
+    - _Color: {r: -0.009999925, g: 0.16000007, b: -0.009999329, a: 1}
+    - _EmissionColor: {r: -0.009999925, g: 0.16000007, b: -0.009999329, a: 1}
     - _EmissionLocation: {r: 0, g: 0, b: 0, a: 0}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
