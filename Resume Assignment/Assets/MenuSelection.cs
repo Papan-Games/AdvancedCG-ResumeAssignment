@@ -40,4 +40,9 @@ public class MenuSelection : MonoBehaviour
         Manager.instance.KengLiang = true;
         SceneManager.LoadScene("Peiyi room temp");
     }
+
+    public void OnClickQiut()
+    {
+        Application.Quit();
+    }
 }
