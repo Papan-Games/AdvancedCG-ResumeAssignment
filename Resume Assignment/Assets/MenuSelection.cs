@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuSelection : MonoBehaviour
 {
+    public GameObject HiddenThings;
+    public GameObject NextSceneEffect;
+    public Image FadeIn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +27,8 @@ public class MenuSelection : MonoBehaviour
         Manager.instance.ChiaLing = true;
         Manager.instance.PeiYi = false;
         Manager.instance.KengLiang = false;
-        SceneManager.LoadScene("Peiyi room temp");
+        //SceneManager.LoadScene("Peiyi room temp");
+        StartCoroutine(LoadNextScene());
     }
 
     public void ChoosePeiYi()
@@ -30,7 +36,8 @@ public class MenuSelection : MonoBehaviour
         Manager.instance.ChiaLing = false;
         Manager.instance.PeiYi = true;
         Manager.instance.KengLiang = false;
-        SceneManager.LoadScene("Peiyi room temp");
+        //SceneManager.LoadScene("Peiyi room temp");
+        StartCoroutine(LoadNextScene());
     }
 
     public void ChooseKengLiang()
@@ -38,7 +45,30 @@ public class MenuSelection : MonoBehaviour
         Manager.instance.ChiaLing = false;
         Manager.instance.PeiYi = false;
         Manager.instance.KengLiang = true;
+        //SceneManager.LoadScene("Peiyi room temp");
+        StartCoroutine(LoadNextScene());
+    }
+
+    IEnumerator LoadNextScene()
+    {
+        HiddenThings.SetActive(false);
+        NextSceneEffect.SetActive(true);
+        yield return new WaitForSeconds(3);
+        StartCoroutine(PlayEffect(1.0f, 1.0f));
         SceneManager.LoadScene("Peiyi room temp");
+
+
+    }
+
+    IEnumerator PlayEffect(float aValue, float aTime)
+    {
+        float alpha = FadeIn.color.a;
+        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
+        {
+            Color newColor = new Color(1, 1, 1, Mathf.Lerp(alpha, aValue, t));
+            FadeIn.color = newColor;
+            yield return null;
+        }
     }
 
     public void OnClickQiut()
