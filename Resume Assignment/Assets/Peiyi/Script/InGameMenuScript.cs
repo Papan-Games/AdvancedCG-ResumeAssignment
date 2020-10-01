@@ -17,6 +17,7 @@ public class InGameMenuScript : MonoBehaviour
     public void OnClickMenu()
     {
         confirmPopup.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void OnClickYes()
@@ -28,6 +29,7 @@ public class InGameMenuScript : MonoBehaviour
     public void OnClickNo()
     {
         confirmPopup.SetActive(false);
+        Time.timeScale = 1;
     }
 
 }
