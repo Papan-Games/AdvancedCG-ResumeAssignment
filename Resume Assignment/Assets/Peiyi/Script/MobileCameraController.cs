@@ -14,9 +14,6 @@ public class MobileCameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //var fps = GetComponent<PlayerMove>();
-
-        //fps.
         var mouseLook = GetComponent<MouseLook>();
         mouseLook.LookAxis = CameraTouchField.TouchDist;
     }
