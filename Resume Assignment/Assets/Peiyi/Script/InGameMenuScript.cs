@@ -23,6 +23,7 @@ public class InGameMenuScript : MonoBehaviour
     public void OnClickYes()
     {
         confirmPopup.SetActive(false);
+        Time.timeScale = 1;
         SceneManager.LoadScene("Menu");
     }
 
