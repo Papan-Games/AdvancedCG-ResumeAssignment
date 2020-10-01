@@ -27,7 +27,7 @@ public class InGameMenuScript : MonoBehaviour
 
     public void OnClickNo()
     {
-        confirmPopup.SetActive(true);
+        confirmPopup.SetActive(false);
     }
 
 }
