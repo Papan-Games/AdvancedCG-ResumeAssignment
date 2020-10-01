@@ -7,6 +7,7 @@ public class Interactions : MonoBehaviour
 {
     public GameObject interactButton;
     public GameObject UIPopUpPanel;
+
     // Start is called before the first frame update
     void Start()
     {

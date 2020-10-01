@@ -6,6 +6,11 @@ public class InteractButton : MonoBehaviour
 {
     bool interacted;
     public GameObject PanelRef;
+
+    public GameObject joystick;
+    public GameObject jumpButton;
+    public GameObject backButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +23,22 @@ public class InteractButton : MonoBehaviour
         
     }
 
+    private void ShowGUI(bool active)
+    {
+        joystick.SetActive(active);
+        jumpButton.SetActive(active);
+        backButton.SetActive(!active);
+    }
+
     public void InteractPlease()
     {
         if(PanelRef != null && !interacted)
         {
-            PanelRef.SetActive(true);
             interacted = true;
-            Time.timeScale = 0;
+            PanelRef.SetActive(true);
+            PanelRef.GetComponent<Animator>().SetBool("isOpen", true);
+            ShowGUI(false);
+            StartCoroutine(HandlePanel(true));
         }
     }
 
@@ -32,9 +46,24 @@ public class InteractButton : MonoBehaviour
     {
         if(PanelRef != null && interacted)
         {
-            interacted = false;
-            PanelRef.SetActive(false);
             Time.timeScale = 1;
+            interacted = false;
+            PanelRef.GetComponent<Animator>().SetBool("isOpen", false);
+            StartCoroutine(HandlePanel(false));
+        }
+    }
+
+    IEnumerator HandlePanel(bool open)
+    {
+        yield return new WaitForSeconds(0.75f);
+        if (open)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            PanelRef.SetActive(false);
+            ShowGUI(true);
         }
     }
 }
