@@ -7,13 +7,11 @@ public class Interactions : MonoBehaviour
 {
     public GameObject interactButton;
     public GameObject UIPopUpPanel;
-    private bool interacted;
     // Start is called before the first frame update
     void Start()
     {
         interactButton.SetActive(false);
         UIPopUpPanel.SetActive(false);
-        interacted = false;
     }
 
     // Update is called once per frame
@@ -22,31 +20,22 @@ public class Interactions : MonoBehaviour
         
     }
 
-    private void OnTriggerStay2D(Collider2D other) 
+    private void OnTriggerStay(Collider other) 
     {
         if(other.CompareTag("Player"))
         {
             interactButton.SetActive(true);
+            interactButton.GetComponent<InteractButton>().PanelRef = UIPopUpPanel;
         }
     }
 
-    public void InteractPlease()
+    private void OnTriggerExit(Collider other) 
     {
-        if(!interacted)
+        if(other.CompareTag("Player"))
         {
-            interacted = true;
-            UIPopUpPanel.SetActive(true);
-            Time.timeScale = 0;
-        }
+            interactButton.GetComponent<InteractButton>().PanelRef = null;
+            interactButton.SetActive(false);
+        }    
     }
 
-    public void CloseButton()
-    {
-        if(interacted)
-        {
-            interacted = false;
-            UIPopUpPanel.SetActive(false);
-            Time.timeScale = 1;
-        }
-    }
 }
