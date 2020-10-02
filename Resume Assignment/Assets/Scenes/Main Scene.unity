@@ -9050,6 +9050,7 @@ MonoBehaviour:
   joystick: {fileID: 665976210}
   jumpButton: {fileID: 1030106874}
   backButton: {fileID: 1503323585}
+  moveRef: {fileID: 1819059976}
 --- !u!82 &1115906020
 AudioSource:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
     public float speed = 6.0f;
     public float jumpSpeed = 5.0f;
     public float gravity = 9.8f;
-    private bool canMove;
+    public bool canMove;
 
     private bool mobileJump;
     private CharacterController charController;

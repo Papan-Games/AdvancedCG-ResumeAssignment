@@ -10,7 +10,7 @@ public class InteractButton : MonoBehaviour
     public GameObject joystick;
     public GameObject jumpButton;
     public GameObject backButton;
-
+    public PlayerMove moveRef;
     private AudioSource FlipPageSFX;
 
     // Start is called before the first frame update
@@ -31,7 +31,7 @@ public class InteractButton : MonoBehaviour
     {
         if(PanelRef != null && !interacted)
         {
-            interacted = true;
+            moveRef.canMove = false;
             PanelRef.SetActive(true);
             PanelRef.GetComponent<Animator>().SetBool("isOpen", true);
             FlipPageSFX.PlayOneShot(FlipPageSFX.clip);
@@ -44,8 +44,8 @@ public class InteractButton : MonoBehaviour
     {
         if(PanelRef != null && interacted)
         {
-            Time.timeScale = 1;
             interacted = false;
+            Time.timeScale = 1;
             PanelRef.GetComponent<Animator>().SetBool("isOpen", false);
             FlipPageSFX.PlayOneShot(FlipPageSFX.clip);
             StartCoroutine(HandlePanel(false));
@@ -58,10 +58,13 @@ public class InteractButton : MonoBehaviour
         if (open)
         {
             Time.timeScale = 0;
+            interacted = true;
         }
         else
         {
+            moveRef.canMove = true;
             PanelRef.SetActive(false);
+            PanelRef = null;
             ShowGUI(true);
         }
     }
