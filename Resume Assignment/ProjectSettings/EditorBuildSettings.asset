@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: ffe8206f8d2a1f0459bee4fff74b5d4c
+  - enabled: 1
+    path: Assets/Scenes/Peiyi room temp.unity
+    guid: a98840a72ab8e5740be5e459b0636a43
   m_configObjects: {}

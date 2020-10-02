@@ -47,7 +47,7 @@ public class MenuSelection : MonoBehaviour
         yield return new WaitForSeconds(3);
         StartCoroutine(PlayEffect(1.0f, 1.0f));
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("Peiyi room temp");
+        SceneManager.LoadScene("Main Scene");
     }
 
     IEnumerator PlayEffect(float aValue, float aTime)
