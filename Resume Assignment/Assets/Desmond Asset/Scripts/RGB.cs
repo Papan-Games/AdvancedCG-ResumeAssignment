@@ -116,17 +116,5 @@ public class RGB : MonoBehaviour
                }
            }
         }
-        // if (red >= 1.0f)
-        // {
-        //     if(green >= 1.0f)
-        //     {
-        //         red = 0.0f;
-        //     }
-        //     else
-        //     {
-        //         green += TransitionSpeed;
-        //         lightColor = new Color (0, green, 0);
-        //     }
-        // }
     }
 }

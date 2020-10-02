@@ -17,12 +17,6 @@ public class InteractButton : MonoBehaviour
         interacted = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void ShowGUI(bool active)
     {
         joystick.SetActive(active);
