@@ -12,7 +12,7 @@ public class Hobbies : MonoBehaviour
     {
         if (Manager.instance.ChiaLing)
         {
-            personalHobbies.text = "Dancing\nSinging\nActing\nGaming";
+            personalHobbies.text = "1. Gaming\n2. Dancing\n3. Singing\n4. Acting";
         }
         else if (Manager.instance.PeiYi)
         {

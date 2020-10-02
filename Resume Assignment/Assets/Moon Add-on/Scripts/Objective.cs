@@ -12,7 +12,7 @@ public class Objective : MonoBehaviour
     {
         if (Manager.instance.ChiaLing)
         {
-            objective.text = "Working a job that I enjoy and continue to be involved in art performances";
+            objective.text = "Getting a job in game industry and continue to be involved in art performances";
         }
         else if (Manager.instance.PeiYi)
         {

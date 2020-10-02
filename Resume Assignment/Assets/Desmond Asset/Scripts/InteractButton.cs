@@ -9,6 +9,7 @@ public class InteractButton : MonoBehaviour
 
     public GameObject joystick;
     public GameObject jumpButton;
+    public GameObject homeButton;
     public GameObject backButton;
     public PlayerMove moveRef;
     private AudioSource FlipPageSFX;
@@ -24,6 +25,7 @@ public class InteractButton : MonoBehaviour
     {
         joystick.SetActive(active);
         jumpButton.SetActive(active);
+        homeButton.SetActive(active);
         backButton.SetActive(!active);
     }
 

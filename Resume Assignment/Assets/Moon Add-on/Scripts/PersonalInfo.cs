@@ -20,7 +20,7 @@ public class PersonalInfo : MonoBehaviour
         {
             age.text = "22";
             IC.text = "980307-08-5966";
-            DOB.text = "07 / 03 / 1998";
+            DOB.text = "07/03/1998";
             gender.text = "Female";
             maritalStatus.text = "Single";
             nationality.text = "Malaysian";
@@ -30,7 +30,7 @@ public class PersonalInfo : MonoBehaviour
         {
             age.text = "22";
             IC.text = "980227-10-5912";
-            DOB.text = "27 / 02 / 1998";
+            DOB.text = "27/02/1998";
             gender.text = "Female";
             maritalStatus.text = "Single";
             nationality.text = "Malaysian";
@@ -40,7 +40,7 @@ public class PersonalInfo : MonoBehaviour
         {
             age.text = "22";
             IC.text = "980403-14-6335";
-            DOB.text = "03 / 04 / 1998";
+            DOB.text = "03/04/1998";
             gender.text = "Male";
             maritalStatus.text = "Single";
             nationality.text = "Malaysian";

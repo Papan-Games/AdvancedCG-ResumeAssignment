@@ -12,16 +12,16 @@ public class WorkingExperience : MonoBehaviour
     {
         if (Manager.instance.ChiaLing)
         {
-            workingExperiences.text = "Video Editor (Freelance) for T7 Global Bhd\nSong Grader (Freelance) for NEXT Music\n" +
-                "Self-Employed Online Business Owner";
+            workingExperiences.text = "1. Video Editor (Freelance) for T7 Global Bhd\n2. Song Grader (Freelance) for NEXT Music\n" +
+                "3. Self-Employed Online Business Owner";
         }
         else if (Manager.instance.PeiYi)
         {
-            workingExperiences.text = "General Clerk in Interstrive Sdn Bhd\nHome Tutor";
+            workingExperiences.text = "1. General Clerk in Interstrive Sdn Bhd\n2. Home Tutor";
         }
         else if (Manager.instance.KengLiang)
         {
-            workingExperiences.text = "Junior Web UI Designer\nApp UI Designer";
+            workingExperiences.text = "1. Junior Web UI Designer\n2. App UI Designer";
         }
     }
 }

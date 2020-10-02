@@ -12,11 +12,11 @@ public class Strengths : MonoBehaviour
     {
         if (Manager.instance.ChiaLing)
         {
-            personalStrengths.text = "Leadership\nTeamwork\nPlanning and decision making\nCommunication\nCritical";
+            personalStrengths.text = "1. Leadership\n2. Teamwork\n3. Planning\n4. Decision making\n5. Communication";
         }
         else if (Manager.instance.PeiYi)
         {
-            personalStrengths.text = "Optimistic\nWilling to learn";
+            personalStrengths.text = "1. Optimistic\n2. Willing to learn";
         }
         else if (Manager.instance.KengLiang)
         {

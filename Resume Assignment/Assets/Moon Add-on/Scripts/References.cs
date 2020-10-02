@@ -12,15 +12,15 @@ public class References : MonoBehaviour
     {
         if (Manager.instance.ChiaLing)
         {
-            references.text = "Dr. Bong Mei Fern\n@\nbongmf@utar.edu.my";
+            references.text = "Dr. Bong Mei Fern\n\n@ bongmf @ utar.edu.my";
         }
         else if (Manager.instance.PeiYi)
         {
-            references.text = "Dr. Bong Mei Fern\n@\nbongmf@utar.edu.my";
+            references.text = "Dr. Bong Mei Fern\n\n@ bongmf @ utar.edu.my";
         }
         else if (Manager.instance.KengLiang)
         {
-            references.text = "Leon\n@\nOmniAppSolutions";
+            references.text = "Leon\n\n@ OmniAppSolutions";
         }
     }
 }
