@@ -19129,7 +19129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canAim: 0
   charCam: {fileID: 134314978}
-  sensitivity: 0.1
+  sensitivity: 0.04
   axes: 0
   LookAxis: {x: 0, y: 0}
 --- !u!114 &1819059974
