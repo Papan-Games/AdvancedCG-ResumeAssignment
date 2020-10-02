@@ -10,23 +10,12 @@ public class MenuSelection : MonoBehaviour
     public GameObject NextSceneEffect;
     public Image FadeIn;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ChooseChiaLing()
     {
         Manager.instance.ChiaLing = true;
         Manager.instance.PeiYi = false;
         Manager.instance.KengLiang = false;
+        Manager.instance.WarpSFX.Play();
         //SceneManager.LoadScene("Peiyi room temp");
         StartCoroutine(LoadNextScene());
     }
@@ -36,6 +25,7 @@ public class MenuSelection : MonoBehaviour
         Manager.instance.ChiaLing = false;
         Manager.instance.PeiYi = true;
         Manager.instance.KengLiang = false;
+        Manager.instance.WarpSFX.Play();
         //SceneManager.LoadScene("Peiyi room temp");
         StartCoroutine(LoadNextScene());
     }
@@ -45,6 +35,7 @@ public class MenuSelection : MonoBehaviour
         Manager.instance.ChiaLing = false;
         Manager.instance.PeiYi = false;
         Manager.instance.KengLiang = true;
+        Manager.instance.WarpSFX.Play();
         //SceneManager.LoadScene("Peiyi room temp");
         StartCoroutine(LoadNextScene());
     }

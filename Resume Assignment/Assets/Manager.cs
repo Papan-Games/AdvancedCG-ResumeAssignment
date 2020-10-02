@@ -7,7 +7,7 @@ public class Manager : MonoBehaviour
     public static Manager instance {get; private set;}
 
     public bool ChiaLing, PeiYi, KengLiang;
-
+    public AudioSource WarpSFX;
     private void Awake() 
     {
         if (instance == null)
