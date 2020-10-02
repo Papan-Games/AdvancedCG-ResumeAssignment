@@ -20,7 +20,7 @@ public class Strengths : MonoBehaviour
         }
         else if (Manager.instance.KengLiang)
         {
-            personalStrengths.text = "Communicate well";
+            personalStrengths.text = "1. Communicate well\n2. Adapt quickly\n3. Problem solver";
         }
     }
 }

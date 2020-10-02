@@ -20,7 +20,7 @@ public class Skills : MonoBehaviour
         }
         else if (Manager.instance.KengLiang)
         {
-            skills.text = "1. Unity C# Scripting\n2. C++";
+            skills.text = "1. Unity C# Scripting\n2. C++\n3. UI Design\n4. Game Idea Generation";
         }
     }
 }
