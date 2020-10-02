@@ -16,7 +16,7 @@ public class Strengths : MonoBehaviour
         }
         else if (Manager.instance.PeiYi)
         {
-            personalStrengths.text = "1. Optimistic\n2. Willing to learn";
+            personalStrengths.text = "1. Willing to learn\n2. Problem solver\n3. Good teamwork\n4. Good follower";
         }
         else if (Manager.instance.KengLiang)
         {

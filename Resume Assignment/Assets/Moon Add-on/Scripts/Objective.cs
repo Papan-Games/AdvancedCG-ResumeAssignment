@@ -16,7 +16,7 @@ public class Objective : MonoBehaviour
         }
         else if (Manager.instance.PeiYi)
         {
-            objective.text = "Reduce family burden";
+            objective.text = "Learn new things and work in a new environment";
         }
         else if (Manager.instance.KengLiang)
         {

@@ -12,15 +12,17 @@ public class Education : MonoBehaviour
     {
         if (Manager.instance.ChiaLing)
         {
-            educationBackground.text = "Bachelor of Science in Game Development\n\nCGPA - 3.5123";
+            educationBackground.text = "UTAR Bachelor of Science in Game Development\nCGPA - 3.5123" +
+                "\n\nTARUC Diploma in Multimedia Design\nCGPA - 3.2694\n\nSPM - 1A+ 3A 1A- 1B+ 3B 1C";
         }
         else if (Manager.instance.PeiYi)
         {
-            educationBackground.text = "Bachelor of Science in Game Development\n\nCGPA - 3.1537";
+            educationBackground.text = "UTAR Bachelor of Science in Game Development\nCGPA - 3.1537" +
+                "\n\nSTPM - 1B+ 1D+ 1C\n\nSPM - 1A 1A- 2B+ 1B 4C+ 1D";
         }
         else if (Manager.instance.KengLiang)
         {
-            educationBackground.text = "Bachelor of Science in Game Development\n\nCGPA - 3.57" +
+            educationBackground.text = "UTAR Bachelor of Science in Game Development\nCGPA - 3.57" +
                 "\n\nSPM - 3A+ 5A- 1B+";
         }
     }

@@ -16,7 +16,7 @@ public class Hobbies : MonoBehaviour
         }
         else if (Manager.instance.PeiYi)
         {
-            personalHobbies.text = "Reading";
+            personalHobbies.text = "1. Reading\n2. Gaming";
         }
         else if (Manager.instance.KengLiang)
         {

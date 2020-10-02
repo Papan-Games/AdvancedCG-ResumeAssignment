@@ -16,7 +16,7 @@ public class Skills : MonoBehaviour
         }
         else if (Manager.instance.PeiYi)
         {
-            skills.text = "1. Unity\n2. C++\n3. C#";
+            skills.text = "1. C++\n2. Unity\n3. C#\n4. Photoshop\n5. 2D & 3D Animation";
         }
         else if (Manager.instance.KengLiang)
         {
